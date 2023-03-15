@@ -1,0 +1,11 @@
+<h1>Form tag</h1>
+<%= form_tag root_path do %>
+  <%= text_field_tag :email %>
+  <%= submit_tag %>
+<% end %>
+
+<h1>Form With</h1>
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <%= form.text_field :email %>
+  <%= form.submit %>
+<% end %>
