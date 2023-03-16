@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 
   end
   def create
-    render plain: params[:article].inspect
+    @article = Article.all
+    puts "AAAAA #{@article.inspect}"
+    redirect_to root_path
   end
 end
