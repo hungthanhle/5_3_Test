@@ -6,12 +6,14 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.save
-    puts "Congra #{Article.all.inspect}"
-    redirect_to root_path
+    redirect_to @article
+  end
+  def show
+    @article = Article.find(params[:id])
   end
   private
     def article_params
-      # giông giống validate chăng ??
       params.require(:article).permit(:email)
     end
+  # ko có end
 end
