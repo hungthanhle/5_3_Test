@@ -4,13 +4,14 @@ class ArticlesController < ApplicationController
 
   end
   def create
-    puts params[:article].class
-    # chuyển từ giá trị HASH sang OBJECT
-    @article = Article.new(params[:article])
-    # GIÁ TRỊ CỦA CÁC INSTANCE VẪN LÀ OBJECT
-    puts @article.class
+    @article = Article.new(article_params)
     @article.save
     puts "Congra #{Article.all.inspect}"
     redirect_to root_path
   end
+  private
+    def article_params
+      # giông giống validate chăng ??
+      params.require(:article).permit(:email)
+    end
 end
