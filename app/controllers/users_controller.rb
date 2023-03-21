@@ -4,7 +4,10 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    respond_to do |format|
+        format.html { redirect_to articles_path }
+        format.json { redirect_to root_path }
+    end
   end
 
   # GET /users/1 or /users/1.json
