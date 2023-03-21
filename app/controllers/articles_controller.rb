@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article
     else
-      # ở yên tại new
       render 'new'
     end
   end
@@ -41,5 +40,4 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:email)
     end
-  # ko có end
 end
