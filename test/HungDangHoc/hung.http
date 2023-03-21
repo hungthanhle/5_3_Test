@@ -1,0 +1,32 @@
+### fail
+POST http://localhost:3000/users/new HTTP/1.1
+Content-Type: "application/json"
+
+{
+  "user_name": "thế là thế nào?1",
+  "last_name": "hả ?1",
+}
+
+### fail
+POST http://localhost:3000/users/ HTTP/1.1
+Content-Type: "application/json"
+
+{
+  "user_name": "thế là thế nào?1",
+  "last_name": "hả ?1",
+}
+
+### still fail
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: "application/xml"
+
+<request>
+    <user_name>thế là thế nào?1</user_name>
+    <last_name>hả ?1</last_name>
+</request>
+
+### work
+GET http://localhost:3000/users.json
+
+### work
+GET http://localhost:3000/users/1.json

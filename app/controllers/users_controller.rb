@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  protect_from_forgery unless: -> { request.format.json? }
 
   # GET /users or /users.json
   def index
@@ -65,6 +66,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:user_name, :last_name)
+      # params.require(:user).permit(:user_name, :last_name)
+      params.permit(:user_name, :last_name)
     end
 end
