@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  resources :entities
   # Defines the root path route ("/")
   root "welcome#index"
 end

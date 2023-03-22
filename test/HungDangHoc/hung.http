@@ -43,3 +43,6 @@ GET http://localhost:3000/users.json
 
 ### work
 GET http://localhost:3000/users/1.json
+
+###
+GET http://localhost:3000/entities
