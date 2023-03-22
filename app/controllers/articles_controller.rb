@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  #new inheritance
   def new
 
   end
