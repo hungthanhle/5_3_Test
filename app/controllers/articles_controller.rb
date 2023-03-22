@@ -1,10 +1,8 @@
 class ArticlesController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
   def new
 
   end
   def create
-    puts article_params
     @article = Article.new(article_params)
     if @article.save
       redirect_to @article
@@ -38,6 +36,6 @@ class ArticlesController < ApplicationController
   end
   private
     def article_params
-      params.permit(:email)
+      params.require(:article).permit(:email)
     end
 end
