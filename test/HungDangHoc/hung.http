@@ -26,6 +26,19 @@ Content-Type: "application/xml"
 </request>
 
 ### work
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: video/webm
+
+### work
+POST http://localhost:3000/articles HTTP/1.1
+Content-Type: multipart/form-data
+
+email=workkk
+# :email=workkk
+# :user= :user_name=okie, :last_name=khong?, :commit=Create User
+
+
+### work
 GET http://localhost:3000/users.json
 
 ### work
