@@ -8,6 +8,10 @@
   <%= comment.body %>
 </p>
 
+<p>
+  <%= link_to 'Edit', edit_article_comment_path(comment.article, comment) %>
+</p>
+
 <%# Chưa thấy tạo method delete ổn %>
 <p>
   <%= button_to 'Destroy Comment', [comment.article, comment],
