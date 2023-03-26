@@ -46,3 +46,67 @@ GET http://localhost:3000/users/1.json
 
 ###
 GET http://localhost:3000/entities
+
+### FINALLY
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: multipart/form-data
+
+user[email]=workkk
+
+###
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: multipart/form-data
+
+user[user_name]=workkk
+
+### not second param
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: multipart/form-data
+
+user[user_name]=workkk, user[last_name]=workkk
+
+###
+POST http://localhost:3000/users
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user[user_name]"
+
+workkk
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user[last_name]"
+
+workkk
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Vẫn Can't Verify CSRF token authenticity.
+POST http://localhost:3000/users
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+X-CSRF-Token: Oh7RdYjPyIUIeXFEAb8H8Y4FvtKSNXmk_RqP9fyCOpkxwCo0z3PPCzOQKbYECyMpKPPtyvoB7YK0xZPcaBe5qA
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user[user_name]"
+
+heiii
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user[last_name]"
+
+huuuu
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+POST http://localhost:3000/users
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="authenticity_token"
+
+vXa92BhW1eeNAhyWjslHPdbtannP3wPgZUv9dG-tDg7ZR0tbF4FU0LW6_boHUhh2DlF6fjbsrc5aBfzWehSvWw
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user[user_name]"
+
+heiii
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="user[last_name]"
+
+huuuu
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
